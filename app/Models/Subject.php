@@ -14,4 +14,8 @@ class Subject extends Model
         'title',
         'lecturer_id',
     ];
+    public function lecturer()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

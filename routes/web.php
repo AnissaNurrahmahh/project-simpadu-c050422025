@@ -1,8 +1,8 @@
 <?php
-
-use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,9 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('user', UserController::class);
     Route::resource('schedule', ScheduleController::class);
     Route::resource('subject', SubjectController::class);
+    Route::resource('form', FormController::class);
     Route::post('/schedule/{id}/generate-code', 'ScheduleController@generateAttendanceCode')->name('schedule.generate-code');
-
-
 });
 
 
